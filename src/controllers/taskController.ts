@@ -15,9 +15,18 @@ export const createTask = async (req: Request, res: Response) => {
   }
 };
 
-export const getTasks = async (req: Request, res: Response) => {
+export const getTasksToDo = async (req: Request, res: Response) => {
   try {
-    const tasks = await Task.find();
+    const tasks = await Task.find({ done: false });
+    res.status(200).json(tasks);
+  } catch (error: any) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+export const getTasksDone = async (req: Request, res: Response) => {
+  try {
+    const tasks = await Task.find({ done: true });
     res.status(200).json(tasks);
   } catch (error: any) {
     res.status(500).json({ error: error.message });

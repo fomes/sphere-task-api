@@ -39,12 +39,13 @@ http://localhost:9000/
 
 ## Funcionalidades
 
-| ROTA               | HTTP   | Descrição               |
-| ------------------ | ------ | ----------------------- |
-| api/tasks          | GET    | Listar todas as tarefas |
-| api/tasks          | POST   | Criar nova tarefa       |
-| api/tasks/:task_id | PATCH  | Atualizar tarefa por Id |
-| api/tasks/:task_id | DELETE | Excluir tarefa por Id   |
+| ROTA               | HTTP   | Descrição                              |
+| ------------------ | ------ | -------------------------------------- |
+| api/tasks/todo     | GET    | Listar todas as tarefas a serem feitas |
+| api/tasks/done     | GET    | Listar todas as tarefas concluídas     |
+| api/tasks/new      | POST   | Criar nova tarefa                      |
+| api/tasks/:task_id | PATCH  | Atualizar tarefa por Id                |
+| api/tasks/:task_id | DELETE | Excluir tarefa por Id                  |
 
 ### Exemplo de Resposta (GET)
 
@@ -52,15 +53,13 @@ http://localhost:9000/
 [
   {
     "id": "65ea088450ec54231a4171fd",
-    "titulo": "Tarefa 1",
-    "descricao": "Descrição da tarefa 1",
-    "concluida": false
+    "desc": "Descrição da tarefa 1",
+    "done": false
   },
   {
     "id": "65ead75a3001a9f1943bcdfb",
-    "titulo": "Tarefa 2",
-    "descricao": "Descrição da tarefa 2",
-    "concluida": true
+    "desc": "Descrição da tarefa 2",
+    "done": true
   }
 ]
 ```
