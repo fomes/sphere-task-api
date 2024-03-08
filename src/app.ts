@@ -12,7 +12,7 @@ app.use(express.json());
 connectDB();
 
 app.use("/hello", (_req: Request, res: Response) => {
-  res.json({ message: "Hello API!" });
+  res.json({ message: "Api is on!" });
 });
 
 app.use("/api/", taskRoutes);
