@@ -1,7 +1,7 @@
 {
   "name": "sphere-task-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Task Manager API",
   "main": "src/app.ts",
   "scripts": {
     "build": "tsc",
@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Felipe Gomes",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
