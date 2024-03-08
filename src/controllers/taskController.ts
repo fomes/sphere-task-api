@@ -25,17 +25,21 @@ export const getTasks = async (req: Request, res: Response) => {
 };
 
 export const updateTask = async (req: Request, res: Response) => {
-  try {
-    const task = await Task.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-    });
-    if (!task) {
-      res.status(404).json({ error: "Task not found." });
-    } else {
-      res.status(200).json(task);
+  if (!isValidObjectId(req.params.id)) {
+    res.status(404).json({ error: "Invalid task ID." });
+  } else {
+    try {
+      const task = await Task.findByIdAndUpdate(req.params.id, req.body, {
+        new: true,
+      });
+      if (!task) {
+        res.status(404).json({ error: "Task not found." });
+      } else {
+        res.status(200).json(task);
+      }
+    } catch (error: any) {
+      res.status(500).json({ error: error.message });
     }
-  } catch (error: any) {
-    res.status(500).json({ error: error.message });
   }
 };
 
