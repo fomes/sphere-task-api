@@ -75,9 +75,9 @@ http://localhost:9000/
 
 ## Demonstração
 
-A api está disponível para ser utilizada no postman através da seguinte URL base:
+A api também está disponível para ser utilizada no postman através da seguinte URL base:
 
-https://task-api-lcc1.onrender.com/api/
+https://sphere-task-api.onrender.com/
 
 ## Melhorias
 
