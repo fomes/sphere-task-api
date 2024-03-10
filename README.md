@@ -74,7 +74,7 @@ http://localhost:9000/
 
 ## Demonstração
 
-A api também está disponível para ser utilizada no postman através da seguinte URL base:
+Clique no lik abaixo e aguarde a mensagem de boas vindas, em seguida seram listadas as rotas disponíveis.
 
 https://sphere-task-api.onrender.com/
 
