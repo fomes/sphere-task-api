@@ -82,7 +82,7 @@ http://localhost:9000/
 
 ## Demonstração
 
-Clique no lik abaixo e aguarde a mensagem de boas vindas, em seguida seram listadas as rotas disponíveis.
+Clique no lik abaixo e aguarde a mensagem de boas vindas, em seguida serão listadas as rotas disponíveis.
 
 https://sphere-task-api.onrender.com/
 
