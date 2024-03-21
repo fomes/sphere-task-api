@@ -4,7 +4,7 @@ import express, { Application, Request, Response } from "express";
 import { taskRoutes } from "./routes/taskRoutes";
 import { routesInfo } from "./routes/routesInfo";
 
-const app: Application = express();
+export const app: Application = express();
 const PORT = process.env.PORT || 9000;
 
 app.use(cors());

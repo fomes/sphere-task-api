@@ -59,9 +59,17 @@ http://localhost:9000/
   {
     "id": "65ead75a3001a9f1943bcdfb",
     "desc": "Descrição da tarefa 2",
-    "done": true
+    "done": false
   }
 ]
+```
+
+### Exemplo de Requisição (POST)
+
+```json
+{
+  "desc": "Descrição da tarefa 1"
+}
 ```
 
 ## Stack utilizada
@@ -74,13 +82,9 @@ http://localhost:9000/
 
 ## Demonstração
 
-Clique no lik abaixo e aguarde a mensagem de boas vindas, em seguida seram listadas as rotas disponíveis.
+Clique no lik abaixo e aguarde a mensagem de boas vindas, em seguida serão listadas as rotas disponíveis.
 
 https://sphere-task-api.onrender.com/
-
-## Melhorias
-
-Incluir testes unitários.
 
 ## Licença
 
