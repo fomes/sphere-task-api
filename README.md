@@ -84,7 +84,7 @@ http://localhost:9000/
 
 A URL base da API está disponível no link abaixo:
 
-[https://task-manager-api.onrender.com/](https://task-manager-api-service.vercel.app/)
+https://task-manager-api-service.vercel.app/
 
 ## Licença
 
