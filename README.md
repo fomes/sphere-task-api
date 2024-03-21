@@ -12,13 +12,13 @@ Requisitos:
 Clone o projeto
 
 ```bash
-  git clone https://github.com/sphere-task-api
+  git clone https://github.com/task-manager-api
 ```
 
 Entre no diretório do projeto
 
 ```bash
-  cd sphere-task-api
+  cd task-manager-api
 ```
 
 Instale as dependências
@@ -84,7 +84,7 @@ http://localhost:9000/
 
 Clique no lik abaixo e aguarde a mensagem de boas vindas, em seguida serão listadas as rotas disponíveis.
 
-https://sphere-task-api.onrender.com/
+https://task-manager-api.onrender.com/
 
 ## Licença
 
