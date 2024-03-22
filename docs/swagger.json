@@ -1,0 +1,149 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Task Manager API",
+    "version": "1.0.0"
+  },
+  "host": "localhost:9000",
+  "basePath": "/",
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/api/tasks/todo": {
+      "get": {
+        "summary": "GET api/tasks/todo",
+        "operationId": "ListTasksTodo",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          }
+        },
+        "tags": ["Routes"]
+      }
+    },
+    "/api/tasks/done": {
+      "get": {
+        "summary": "GET api/tasks/done",
+        "operationId": "ListTasksDone",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          }
+        },
+        "tags": ["Routes"]
+      }
+    },
+    "/api/tasks/new": {
+      "post": {
+        "summary": "POST api/tasks/new",
+        "operationId": "CreateTask",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "schema": {
+              "properties": {
+                "desc": {
+                  "type": "string",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "tags": ["Routes"]
+      }
+    },
+    "/api/tasks/{taskId}": {
+      "patch": {
+        "summary": "PATCH api/tasks/:taskId",
+        "operationId": "UpdateTask",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "type": "objectId"
+          },
+          {
+            "name": "desc",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "properties": {
+                "desc": {
+                  "type": "string",
+                  "required": true
+                },
+                "done": {
+                  "type": "boolean",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "tags": ["Routes"]
+      }
+    },
+    "/api/tasks/{_taskId}": {
+      "delete": {
+        "summary": "DELETE api/tasks/:taskId",
+        "operationId": "DeleteTask",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "desc": "uuid",
+            "in": "path",
+            "required": true,
+            "type": "objectId"
+          }
+        ],
+        "tags": ["Routes"]
+      }
+    }
+  },
+  "definitions": {
+    "Task": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "desc": {
+          "type": "string",
+          "example": "Descrição da tarefa"
+        },
+        "done": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}
