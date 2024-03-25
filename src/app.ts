@@ -4,7 +4,6 @@ import express, { Application, Request, Response } from "express";
 import swaggerUI from "swagger-ui-express";
 import swaggerDocs from "../docs/swagger.json";
 import { taskRoutes } from "../src/routes/taskRoutes";
-import { SwaggerUIBundle, SwaggerUIStandalonePreset } from "swagger-ui-dist";
 
 export const app: Application = express();
 const PORT = process.env.PORT || 9000;
