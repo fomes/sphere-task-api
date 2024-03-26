@@ -1,71 +1,28 @@
 import { Request, Response } from "express";
-import { Task } from "../models/task.model";
-import { isValidObjectId } from "mongoose";
+import {
+  createTask,
+  findTaskDone,
+  findTaskTodo,
+  removeTask,
+  updateTask,
+} from "../services/taskService";
 
-export const createTask = async (req: Request, res: Response) => {
-  try {
-    const task = await Task.create(req.body);
-    res.status(201).json(task);
-  } catch (error: any) {
-    if (error.name === "ValidationError") {
-      res.status(400).json({ error: error.message });
-    } else {
-      res.status(500).json({ error: error.message });
-    }
-  }
+export const postTask = async (req: Request, res: Response) => {
+  await createTask(req, res);
 };
 
 export const getTasksToDo = async (req: Request, res: Response) => {
-  try {
-    const tasks = await Task.find({ done: false });
-    res.status(200).json(tasks);
-  } catch (error: any) {
-    res.status(500).json({ error: error.message });
-  }
+  await findTaskTodo(req, res);
 };
 
 export const getTasksDone = async (req: Request, res: Response) => {
-  try {
-    const tasks = await Task.find({ done: true });
-    res.status(200).json(tasks);
-  } catch (error: any) {
-    res.status(500).json({ error: error.message });
-  }
+  await findTaskDone(req, res);
 };
 
-export const updateTask = async (req: Request, res: Response) => {
-  if (!isValidObjectId(req.params.id)) {
-    res.status(404).json({ error: "Invalid task ID." });
-  } else {
-    try {
-      const task = await Task.findByIdAndUpdate(req.params.id, req.body, {
-        new: true,
-      });
-      if (!task) {
-        res.status(404).json({ error: "Task not found." });
-      } else {
-        res.status(200).json(task);
-      }
-    } catch (error: any) {
-      res.status(500).json({ error: error.message });
-    }
-  }
+export const patchTask = async (req: Request, res: Response) => {
+  await updateTask(req, res);
 };
 
 export const deleteTask = async (req: Request, res: Response) => {
-  if (!isValidObjectId(req.params.id)) {
-    res.status(404).json({ error: "Invalid task ID." });
-  } else {
-    try {
-      const task = await Task.findByIdAndDelete(req.params.id);
-
-      if (!task) {
-        res.status(404).json({ error: "Task not found." });
-      } else {
-        res.status(204).end();
-      }
-    } catch (error: any) {
-      res.status(500).json({ error: error.message });
-    }
-  }
+  await removeTask(req, res);
 };
