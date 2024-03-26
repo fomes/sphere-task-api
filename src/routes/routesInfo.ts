@@ -2,26 +2,26 @@ export const routesInfo = [
   {
     rota: "/api/tasks/todo",
     método: "GET",
-    descrição: "Returns a task list to do.",
+    descrição: "Retorna uma lista de tarefas para fazer.",
   },
   {
     rota: "/api/tasks/done",
     método: "GET",
-    descrição: "Returns a list of completed tasks.",
+    descrição: "Retorna uma lista de tarefas concluídas.",
   },
   {
     rota: "/api/tasks/new",
     método: "POST",
-    descrição: "Creates a new task.",
+    descrição: "Cria uma nova tarefa.",
   },
   {
     rota: "/api/tasks/:id",
     método: "PATCH",
-    descrição: "Edit a specific task.",
+    descrição: "Edita uma tarefa específica.",
   },
   {
     rota: "/api/tasks/:id",
     método: "DELETE",
-    descrição: "Remove a specific task.",
+    descrição: "Remove uma tarefa específica.",
   },
 ];
